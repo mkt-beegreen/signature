@@ -17,11 +17,11 @@ $(document).ready(function($) {
   }).keyup();
   phone.keyup(function() {
     var value = $(this).val();
-    changePhone.html('<span>Hotline:</span><a href="tel:'+value+'" style="color: #02533e; text-decoration: none;"> '+value+'</a>');
+    changePhone.html('<span>Hotline:</span>&nbsp;<a href="tel:'+value+'" style="color: #02533e; text-decoration: none;">'+value+'</a>');
   }).keyup();
   email.keyup(function() {
     var value = $(this).val();
-    changeEmail.html('<span>Email:</span><a href="email:'+value+'" style="color: #02533e; text-decoration:  none;"> '+value+'</a>');
+    changeEmail.html('<span>Email:</span>&nbsp;<a href="email:'+value+'" style="color: #02533e; text-decoration:  none;">'+value+'</a>');
   }).keyup();
   var clipboard = new ClipboardJS('#btn-copy', {
     target: function() {
