@@ -17,7 +17,7 @@ $(document).ready(function($) {
   }).keyup();
   phone.keyup(function() {
     var value = $(this).val();
-    changePhone.html('<span>Hotline:</span>&nbsp;<a href="tel:'+value+'" style="color: #02533e; text-decoration: none;">'+value+'</a>');
+    changePhone.html('<span>Phone:</span>&nbsp;<a href="tel:'+value+'" style="color: #02533e; text-decoration: none;">'+value+'</a>');
   }).keyup();
   email.keyup(function() {
     var value = $(this).val();
