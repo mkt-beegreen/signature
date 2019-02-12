@@ -1,113 +1,127 @@
-<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-image: url("polygon-background-1.png");
-      background-size: cover;
-    }
-    .content {
-      background-color: #ffffff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 350px;
-      margin: 0 auto;
-      border: 1px solid #eeeeee;
-      padding: 20px;
-    }
-    .form-control {
-      font-size: 14px;
-      display: inline-block;
-      border-top: 0;
-      border-right: 0;
-      border-left: 0;
-      border-bottom: 1px solid #eee;
-      width: 350px;
-      padding: 5px;
-      margin-top: 5px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-control:focus {
-      outline: none;
-    }
-    .btn {
-      display: block;
-      cursor: pointer;
-      margin: 0 auto;
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-image: url("polygon-background-1.png");
+        background-size: cover;
+      }
+      .content {
+        background-color: #ffffff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 350px;
+        margin: 0 auto;
+        border: 1px solid #eeeeee;
+        padding: 20px;
+      }
+      .form-control {
+        font-size: 14px;
+        display: inline-block;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid #eee;
+        width: 350px;
+        padding: 5px;
+        margin-top: 5px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-control:focus {
+        outline: none;
+      }
+      .btn {
+        display: block;
+        cursor: pointer;
+        margin: 0 auto;
 
-    }
-    .btn:focus {
-      outline: none;
-    }
-    .btn-primary {
-      font-size: 14px;
-      background-color: #02533e;
-      text-transform: uppercase;
-      color: #fff;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="content">
-    <div id="form-wrap">
-      <div class="form-group">
-        <label>Họ và tên:
-          <input id="fullname" type="text" name="fullname" value="" placeholder="NGUYỄN VĂN A" class="form-control">
-        </label>
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .btn-primary {
+        font-size: 14px;
+        background-color: #02533e;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 20px;
+      }
+      .footer {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-bottom: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div id="form-wrap">
+        <div class="form-group">
+          <label>Họ và tên:
+            <input id="fullname" type="text" name="fullname" value="" placeholder="NGUYỄN VĂN A" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Chức vụ:
+            <input id="position" type="text" name="position" value="" placeholder="Digital marketing" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Điện thoại:
+            <input id="phone" type="phone" name="phone" value="" placeholder="+84904350240" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Email:
+            <input id="email-company" type="email" name="email-company" value="" placeholder="nguyenvanan@beegreen.vn" class="form-control">
+          </label>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Chức vụ:
-          <input id="position" type="text" name="position" value="" placeholder="Digital marketing" class="form-control">
-        </label>
+      <h3>Output</h3>
+      <div id="wrapper">
+        <table align="left" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" width="350">
+          <tbody>
+            <tr>
+              <td id="name" style="text-transform: uppercase; padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 14px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bold;">
+              </td>
+            </tr>
+            <tr>
+              <td id="pos" style="text-transform: uppercase; padding-bottom:2px; padding-top: 0; color: #02533e;font-size: 12px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bold;">
+              </td>
+            </tr>
+            <tr>
+              <td id="tel" style="padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bold">
+              </td>
+            </tr>
+            <tr>
+              <td id="email" style="padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bold">
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="form-group">
-        <label>Điện thoại:
-          <input id="phone" type="phone" name="phone" value="" placeholder="+84904350240" class="form-control">
-        </label>
-      </div>
-      <div class="form-group">
-        <label>Email:
-          <input id="email-company" type="email" name="email-company" value="" placeholder="nguyenvanan@beegreen.vn" class="form-control">
-        </label>
+      <button id="btn-copy" class="btn btn-primary">Copy</button>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        <small>Copyright © 2019 Beegreen JSC</small>
       </div>
     </div>
-    <h3>Output</h3>
-    <div id="wrapper">
-      <table align="left" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" width="350">
-        <tbody>
-          <tr>
-            <td id="name" style="text-transform: uppercase; padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 14px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bold;">
-            </td>
-          </tr>
-          <tr>
-            <td id="pos" style="text-transform: uppercase; padding-bottom:2px; padding-top: 0; color: #02533e;font-size: 12px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bold;">
-            </td>
-          </tr>
-          <tr>
-            <td id="tel" style="padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bold">
-            </td>
-          </tr>
-          <tr>
-            <td id="email" style="padding-bottom:2px; padding-top: 0; color: #02533e; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bold">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <button id="btn-copy" class="btn btn-primary">Copy</button>
-  </div>
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
