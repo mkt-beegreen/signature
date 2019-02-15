@@ -21,7 +21,7 @@ $(document).ready(function($) {
   }).keyup();
   email.keyup(function() {
     var value = $(this).val();
-    changeEmail.html('<span>Email:</span>&nbsp;<a href="email:'+value+'" style="color: #02533e; text-decoration:  none;">'+value+'</a>');
+    changeEmail.html('<span>Email:</span>&nbsp;<a href="email:'+value+'" style="text-transform: lowercase; color: #02533e; text-decoration:  none;">'+value+'</a>');
   }).keyup();
   var clipboard = new ClipboardJS('#btn-copy', {
     target: function() {
